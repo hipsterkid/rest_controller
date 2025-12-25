@@ -1,6 +1,6 @@
 # Universal REST controller with AutoRender and Authentication
 
-This is a sample __Rails__ application with some fun (_not boring_) stuff:
+This is a sample __Rails 8__ application with some fun (_not boring_) stuff:
 
 * Universal __Rest module__ for controllers
 * Universal __AutoRender module__ in for makes actions responsable
@@ -25,10 +25,10 @@ Check this out:
 
 * [app/models/user.rb](app/models/user.rb)
 * [app/controllers/users\_controller.rb](app/controllers/users\_controller.rb)
-* [app/controllers/concerns/authentication.rb](app/controllers/concerns/authentication.rb)
+* [app/controllers/concerns/authentication.rb](app/controllers/concerns/authentication.rb) \*this guy provide auth
 * [app/controllers/concerns/auto\_render.rb](app/controllers/concerns/auto\_render.rb)
 * [app/controllers/concerns/model\_record.rb](app/controllers/concerns/model\_record.rb)
-* [app/controllers/concerns/rest.rb](app/controllers/concerns/rest.rb)
+* [app/controllers/concerns/rest.rb](app/controllers/concerns/rest.rb) \*this guy aggregate others
 * [app/services/token.rb](app/services/token.rb)
 * [specs/requests/rest\_users\_spec.rb](specs/requests/rest\_users\_spec.rb)
 
