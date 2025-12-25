@@ -1,5 +1,5 @@
 module Rest
-  METHODS = %w(index show create update destroy)
+  METHODS = %w[index show create update destroy]
 
   module_function
 
