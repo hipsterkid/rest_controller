@@ -32,8 +32,8 @@ Check this out:
 * [app/controllers/concerns/permitted\_params.rb](app/controllers/concerns/permitted\_params.rb)
 * [app/controllers/concerns/rest.rb](app/controllers/concerns/rest.rb) \*this guy aggregate others
 * [app/services/token.rb](app/services/token.rb)
-* [spec/requests/authenticated/rest\_users\_spec.rb](spec/requests/authenticated/rest\_users\_spec.rb)
-* [spec/requests/unauthenticated/rest\_users\_spec.rb](spec/requests/unauthenticated/rest\_users\_spec.rb)
+* [spec/requests/rest\_users/authenticated\_spec.rb](spec/requests/rest\_users/authenticated\_spec.rb)
+* [spec/requests/rest\_users/unauthenticated\_spec.rb](spec/requests/rest\_users/unauthenticated\_spec.rb)
 
 # Install & Run
 
