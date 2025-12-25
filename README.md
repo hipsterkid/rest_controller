@@ -30,7 +30,7 @@ Check this out:
 * [app/controllers/concerns/model\_record.rb](app/controllers/concerns/model\_record.rb)
 * [app/controllers/concerns/rest.rb](app/controllers/concerns/rest.rb) \*this guy aggregate others
 * [app/services/token.rb](app/services/token.rb)
-* [specs/requests/rest\_users\_spec.rb](specs/requests/rest\_users\_spec.rb)
+* [spec/requests/rest\_users\_spec.rb](spec/requests/rest\_users\_spec.rb)
 
 # Install & Run
 
