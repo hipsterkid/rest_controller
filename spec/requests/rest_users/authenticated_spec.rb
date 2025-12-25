@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'REST /users', type: :request do
+RSpec.describe 'REST /users authenticated', type: :request do
   before { allow(Token).to receive(:validate) { true } }
 
   it 'gets empty list with GET /users' do

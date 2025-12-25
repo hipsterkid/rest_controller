@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'REST /users', type: :request do
+RSpec.describe 'REST /users unauthenticated', type: :request do
   it 'gets empty list with GET /users' do
     get('/users')
     expect(response).to have_http_status(:forbidden)
