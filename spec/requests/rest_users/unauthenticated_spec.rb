@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'REST /users unauthenticated', type: :request do
-  it 'gets empty list with GET /users' do
+  it 'forbidden with GET /users' do
     get('/users')
     expect(response).to have_http_status(:forbidden)
   end
 
-  it 'gets list values with GET /users' do
+  it 'forbidden with GET /users' do
     [
       { email: 'foo1@bar1', password: 'bugauguga123' },
       { email: 'foo2@bar2', password: 'bugauguga123' }
@@ -19,18 +19,19 @@ RSpec.describe 'REST /users unauthenticated', type: :request do
     expect(response).to have_http_status(:forbidden)
   end
 
-  it 'creates user with POST /users' do
+  it 'forbidden with POST /users' do
     expect { post('/users', params: { email: 'foo@bar', password: 'bugauguga123' }) }.not_to \
       change { User.count }
     expect(User.last).to be_nil
     expect(response).to have_http_status(:forbidden)
   end
 
-  it 'not creates user with POST /users without password' do
+  it 'forbidden with POST /users without password' do
     expect { post('/users', params: { email: 'foo@bar' }) }.not_to change { User.count }
+    expect(response).to have_http_status(:forbidden)
   end
 
-  it 'updates user with PUT /users/:id' do
+  it 'forbidden with PUT /users/:id' do
     User.create(email: 'foo@bar', password: 'bugauguga123')
     user = User.last
     expect { put("/users/#{user.id}", params: { email: 'bar@foo' }) }.not_to \
@@ -38,7 +39,7 @@ RSpec.describe 'REST /users unauthenticated', type: :request do
     expect(response).to have_http_status(:forbidden)
   end
 
-  it 'destroys user with DELETE /users/:id' do
+  it 'forbidden with DELETE /users/:id' do
     [
       { email: 'foo1@bar1', password: 'bugauguga123' },
       { email: 'foo2@bar2', password: 'bugauguga123' }
