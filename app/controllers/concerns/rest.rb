@@ -7,19 +7,16 @@ module Rest
     Module.new do
       define_singleton_method(:included) do |controller|
         controller.include ModelRecord[model]
+        controller.include PermittedParams[*model.url_attributes]
       end
 
       include AutoRender[*METHODS]
 
-      define_method(:index) { model.all }
-      define_method(:show) { record }
-      define_method(:create) { model.create!(permited_params) }
-      define_method(:update) { record.update!(permited_params) }
-      define_method(:destroy) { record.destroy! }
-
-      define_method(:permited_params) do
-        params.permit(*model.url_attributes).to_h
-      end
+      def index = model.all
+      def show = record
+      def create = model.create!(permitted_params.to_h)
+      def update = record.update!(permitted_params.to_h)
+      def destroy = record.destroy!
     end
   end
 end

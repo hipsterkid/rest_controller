@@ -1,6 +1,7 @@
 module Authentication
   def self.included(controller)
     controller.before_action { |instance| Token.validate(instance.params[:token]) }
+    controller.include PermittedParams[:token]
 
     # or separate errors for Expired, Invalid and other exceptions
     controller.rescue_from Token::Error, with: :access_denied

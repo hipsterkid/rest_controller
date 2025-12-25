@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'REST /users', type: :request do
+  before { allow(Token).to receive(:validate) { true } }
+
   it 'gets empty list with GET /users' do
     get('/users')
     expect(response).to have_attributes(status: 200, parsed_body: [])

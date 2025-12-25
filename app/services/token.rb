@@ -4,10 +4,12 @@ module Token
   Invalid = Class.new Error
 
   module_function
-  #
-  # your validation logic with raising errors here
-  #
+
   def validate(token)
-    true
+    return true if token && token == ENV['GODMODE_AUTHTOKEN']
+    #
+    # your validation logic with raising errors here:
+    #
+    raise Error
   end
 end
