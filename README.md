@@ -1,24 +1,36 @@
-# README
+# Universal REST controller with Authentication and AutoRender
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample __Rails__ application with some fun (_not boring_) stuff:
 
-Things you may want to cover:
+* Universal __Rest module__ for controllers
+* Universal __AutoRender module__ in for makes actions responsable
+* Universal __Authentication module__ with param Token service (blank)
 
-* Ruby version
+It has a lot of things happens _on fly_ via initialization (like _metaprogramming_).
 
-* System dependencies
+For example it takes __User__ model:
 
-* Configuration
+```ruby
+class UsersController < ApplicationController
+  include Authentication
+  include Rest[User]
+end
+```
 
-* Database creation
+__Specs__ (basics) for REST'ing users are included.
 
-* Database initialization
+# Files
 
-* How to run the test suite
+Check this out:
 
-* Services (job queues, cache servers, search engines, etc.)
+TODO
 
-* Deployment instructions
+# Install & Run
 
-* ...
+TODO
+
+# Contribute
+
+You are welcome!
+
+__Ruby rules!__
