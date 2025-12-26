@@ -28,7 +28,6 @@ Check this out:
 * [app/controllers/users\_controller.rb](app/controllers/users\_controller.rb)
 * [app/controllers/concerns/authentication.rb](app/controllers/concerns/authentication.rb) \*this guy provide auth
 * [app/controllers/concerns/auto\_render.rb](app/controllers/concerns/auto\_render.rb)
-* [app/controllers/concerns/model\_record.rb](app/controllers/concerns/model\_record.rb)
 * [app/controllers/concerns/permitted\_params.rb](app/controllers/concerns/permitted\_params.rb)
 * [app/controllers/concerns/rest.rb](app/controllers/concerns/rest.rb) \*this guy aggregate others
 * [app/services/token.rb](app/services/token.rb)
