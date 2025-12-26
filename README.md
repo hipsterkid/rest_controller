@@ -1,9 +1,9 @@
-# Universal REST controller with PermitParams, AutoRender and Authentication
+# Universal REST controller with PermittedParams, AutoRender and Authentication
 
 This is a sample __Rails 8__ application with some fun (_not boring_) stuff:
 
 * Universal __Rest module__ for controllers
-* Universal __PermitParams module__ for controllers
+* Universal __PermittedParams module__ for controllers
 * Universal __AutoRender module__ in for makes actions responsable
 * Universal __Authentication module__ with param Token service (blank)
 
