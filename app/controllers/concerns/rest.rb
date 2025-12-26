@@ -6,7 +6,7 @@ module Rest
   def [](model)
     Module.new do
       define_singleton_method(:included) do |controller|
-        controller.include PermittedParams[*model.url_attributes]
+        controller.include PermittedParams[*model.http_attributes]
         controller.rescue_from(ActiveRecord::RecordNotFound) { head :not_found }
       end
 
