@@ -6,7 +6,7 @@ module Token
   module_function
 
   def validate(token)
-    return true if token && token == ENV['GODMODE_AUTHTOKEN']
+    return true if token && token == ENV["GODMODE_AUTHTOKEN"]
     #
     # your validation logic with raising errors here:
     #
