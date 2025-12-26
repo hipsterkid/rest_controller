@@ -2,13 +2,13 @@ module PermittedParams
   def self.[](*param_names)
     Module.new do
       define_singleton_method(:included) do |controller|
-        permits = controller.class_variable_defined?(:@@permits) ?
-          controller.class_variable_get(:@@permits) : []
-        controller.class_variable_set(:@@permits, permits + [param_names])
+        permits = controller.instance_variable_defined?(:@permits) ?
+          controller.instance_variable_get(:@permits) : []
+        controller.instance_variable_set(:@permits, permits + [param_names])
       end
 
       def permitted_params
-        params.permit(*self.class.class_variable_get(:@@permits))
+        params.permit(*self.class.instance_variable_get(:@permits))
       end
     end
   end
