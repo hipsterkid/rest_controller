@@ -6,17 +6,20 @@ module Rest
   def [](model)
     Module.new do
       define_singleton_method(:included) do |controller|
-        controller.include ModelRecord[model]
         controller.include PermittedParams[*model.url_attributes]
+        controller.rescue_from(ActiveRecord::RecordNotFound) { head :not_found }
       end
 
       include AutoRender[*METHODS]
 
-      def index = model.all
-      def show = record
-      def create = model.create!(permitted_params.to_h)
-      def update = record.update!(permitted_params.to_h)
-      def destroy = record.destroy!
+      def index = resource_class.all
+      def show = resource
+      def create = resource_class.create!(permitted_params.to_h)
+      def update = resource.update!(permitted_params.to_h)
+      def destroy = resource.destroy!
+
+      define_method(:resource_class) { model }
+      define_method(:resource) { @resource ||= model.find(params[:id]) }
     end
   end
 end
